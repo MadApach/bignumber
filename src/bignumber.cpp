@@ -122,15 +122,15 @@ QString BigNumber::toString() const
     return number;
 }
 
-quint8 BigNumber::digit(quint64 index) const
+quint8 BigNumber::digit(quint64 position) const
 {
-    if(index >= size())
+    if(position >= size())
     {
         return 0;
     }
-    int shift = (index % 2) == 0 ? 4 : 0;
+    int shift = (position % 2) == 0 ? 4 : 0;
     static const unsigned char mask(0x0F);
-    return quint8((_data[index / 2] >> shift) & mask);
+    return quint8((_data[position / 2] >> shift) & mask);
 }
 
 quint64 BigNumber::size() const
