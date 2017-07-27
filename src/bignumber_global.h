@@ -1,0 +1,12 @@
+#ifndef BIGNUMBER_GLOBAL_H
+#define BIGNUMBER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(BIGNUMBER_LIBRARY)
+#  define BIGNUMBERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define BIGNUMBERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // BIGNUMBER_GLOBAL_H
